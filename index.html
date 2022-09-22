@@ -3,42 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
     <input type="radio" name="maker" value="good" onclick="formSwitch()" checked><label for="good">良かった行動</label>
     <input type="radio" name="maker" value="bad" onclick="formSwitch()"><label for="bad">まずかった行動</label><br><br>
     誰が<br>
-    <input id="who" type="text" value="" placeholder="誰が"><br><br>
+    <textarea class='fixed-vertical' id="who" type="text" value="" placeholder="誰が"></textarea><br><br>
     いつ<br>
-    <textarea id="when" placeholder="いつ"></textarea><br><br>
+    <textarea class='fixed-vertical' id="when" placeholder="いつ"></textarea><br><br>
     どこで<br>
-    <textarea id="where" placeholder="どこで"></textarea><br><br>
+    <textarea class='fixed-vertical' id="where" placeholder="どこで"></textarea><br><br>
     なぜ<br>
-    <textarea id="why" placeholder="なぜ"></textarea><br><br>
+    <textarea class='fixed-vertical' id="why" placeholder="なぜ"></textarea><br><br>
     何をどうした<br>
-    <textarea id="whathow" placeholder="何をどうした"></textarea><br><br>
+    <textarea class='fixed-vertical' id="whathow" placeholder="何をどうした"></textarea><br><br>
     結果どうなった<br>
-    <textarea id="result" placeholder="結果どうなった"></textarea><br><br>
+    <textarea class='fixed-vertical' id="result" placeholder="結果どうなった"></textarea><br><br>
     <div id="goodchoice">
     この行動の良かった点（1つだけでもOK）<br>
-    <textarea id="goodPoint1" name="goodPoint" placeholder="この行動の良かった点1"></textarea><br>
-    <textarea id="goodPoint2" name="goodPoint" placeholder="この行動の良かった点2"></textarea><br><br>
+    <textarea class='fixed-vertical' id="goodPoint1" name="goodPoint" placeholder="この行動の良かった点1"></textarea><br>
+    <textarea class='fixed-vertical' id="goodPoint2" name="goodPoint" placeholder="この行動の良かった点2"></textarea><br><br>
     この行動をやっていなかった世界線（1つだけでもOK）<br>
-    <textarea id="anotherStory1"  name="anotherStory" placeholder="この行動をやっていなかった世界線1"></textarea><br>
-    <textarea id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br><br>
+    <textarea class='fixed-vertical' id="anotherStory1"  name="anotherStory" placeholder="この行動をやっていなかった世界線1"></textarea><br>
+    <textarea class='fixed-vertical' id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br><br>
     </div>
     <div id="badchoice">
     この行動のまずかった点（1つだけでもOK）<br>
-    <textarea id="badPoint1" name="badPoint" placeholder="この行動のまずかった点1"></textarea><br>
-    <textarea id="badPoint2" name="badPoint" placeholder="この行動のまずかった点2"></textarea><br><br>
+    <textarea class='fixed-vertical' id="badPoint1" name="badPoint" placeholder="この行動のまずかった点1"></textarea><br>
+    <textarea class='fixed-vertical' id="badPoint2" name="badPoint" placeholder="この行動のまずかった点2"></textarea><br><br>
     行動の改善案（1つだけでもOK）<br>
-    <textarea id="improvementPlan1"  name="improvementPlan" placeholder="行動の改善案1"></textarea><br>
-    <textarea id="improvementPlan2"  name="improvementPlan" placeholder="行動の改善案2"></textarea><br><br>
+    <textarea class='fixed-vertical' id="improvementPlan1"  name="improvementPlan" placeholder="行動の改善案1"></textarea><br>
+    <textarea class='fixed-vertical' id="improvementPlan2"  name="improvementPlan" placeholder="行動の改善案2"></textarea><br><br>
 
     </div>
     補足事項<br>
-    <textarea id="appendix" placeholder="補足事項"></textarea><br>
+    <textarea class='fixed-vertical' id="appendix" placeholder="補足事項"></textarea><br>
     <button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button>
 
     
