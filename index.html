@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>投稿用フォーム</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
+    <h1>行動の背景説明</h1>
     <input type="radio" name="maker" value="good" onclick="formSwitch()" checked><label for="good">良かった行動</label>
     <input type="radio" name="maker" value="bad" onclick="formSwitch()"><label for="bad">まずかった行動</label><br><br>
     誰が<br>
@@ -21,6 +21,7 @@
     <textarea class='fixed-vertical' id="whathow" placeholder="何をどうした"></textarea><br><br>
     結果どうなった<br>
     <textarea class='fixed-vertical' id="result" placeholder="結果どうなった"></textarea><br><br>
+    <h1>行動を振り返って</h1>
     <div id="goodchoice">
     この行動の良かった点（1つだけでもOK）<br>
     <textarea class='fixed-vertical' id="goodPoint1" name="goodPoint" placeholder="この行動の良かった点1"></textarea><br>
@@ -41,6 +42,10 @@
     補足事項<br>
     <textarea class='fixed-vertical' id="appendix" placeholder="補足事項"></textarea><br>
     <button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button>
+
+    <footer>
+        <p>任意のサイトへの利用可・コード再利用可</p>
+    </footer>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
