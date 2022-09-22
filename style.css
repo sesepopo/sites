@@ -1,0 +1,4 @@
+textarea.fixed-vertical {
+    resize: vertical;
+    width: 50em;
+  }
