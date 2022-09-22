@@ -42,8 +42,6 @@
     <button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button>
 
     
-
-    <!-- bodyタグ内の下部に以下を入力する -->
     <script>
         function gatherAllText() {
             var who = document.getElementById("who").value;
@@ -52,8 +50,6 @@
             var why = document.getElementById("why").value;
             var whathow = document.getElementById("whathow").value;
             var result = document.getElementById("result").value;
-            // var important_point = document.getElementById("important_point").value;
-            // var important_point = document.getElementById("important_point");
 
         
             radio = document.getElementsByName('maker');
@@ -61,7 +57,7 @@
                 var pointTitle = "この行動の良かった点";
                 var points = Array.prototype.slice.call(document.getElementsByName("goodPoint"));
                 points = filterEmptyText(points);
-                // var others = document.getElementById("anotherStory").value;
+                
                 var othersTitle = "この行動をやっていなかった世界線";
                 var others = Array.prototype.slice.call(document.getElementsByName("anotherStory"));
                 others = filterEmptyText(others);
@@ -86,14 +82,14 @@
             const l_points = gatherItems(points);
 
             const l_othersTitle = `\* ${othersTitle}`;
-            // const l_others = `${others}`;
             const l_others = gatherItems(others);
 
             const l_appendixTitle = `\* ${document.getElementById("appendix").placeholder}`;
             const l_appendix = "";
 
+            const endText = "//必要に応じて丸括弧内を書き換えて記事にタグをつける。&tag(生活);とか\n&tag(test tag);\n//コメント欄を生成\n#pcomment";
 
-            var res = [l_circumstance, l_who, l_when, l_where, l_why, l_whathow, l_result, l_pointTitle, l_points, l_othersTitle, l_others, l_appendixTitle, l_appendix].join("\n");
+            var res = [l_circumstance, l_who, l_when, l_where, l_why, l_whathow, l_result, l_pointTitle, l_points, l_othersTitle, l_others, l_appendixTitle, l_appendix, endText].join("\n");
             
             
             return res;
