@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input type="radio" name="maker" value="good" onclick="formSwitch()" checked><label for="good">良かった行動</label>
+    <input type="radio" name="maker" value="bad" onclick="formSwitch()"><label for="bad">まずかった行動</label><br><br>
+    誰が<br>
+    <input id="who" type="text" value="" placeholder="誰が"><br><br>
+    いつ<br>
+    <textarea id="when" placeholder="いつ"></textarea><br><br>
+    どこで<br>
+    <textarea id="where" placeholder="どこで"></textarea><br><br>
+    なぜ<br>
+    <textarea id="why" placeholder="なぜ"></textarea><br><br>
+    何をどうした<br>
+    <textarea id="whathow" placeholder="何をどうした"></textarea><br><br>
+    結果どうなった<br>
+    <textarea id="result" placeholder="結果どうなった"></textarea><br><br>
+    <div id="goodchoice">
+    この行動の良かった点（1つだけでもOK）<br>
+    <textarea id="goodPoint1" name="goodPoint" placeholder="この行動の良かった点1"></textarea><br>
+    <textarea id="goodPoint2" name="goodPoint" placeholder="この行動の良かった点2"></textarea><br><br>
+    この行動をやっていなかった世界線（1つだけでもOK）<br>
+    <textarea id="anotherStory1"  name="anotherStory" placeholder="この行動をやっていなかった世界線1"></textarea><br>
+    <textarea id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br><br>
+    </div>
+    <div id="badchoice">
+    この行動のまずかった点（1つだけでもOK）<br>
+    <textarea id="badPoint1" name="badPoint" placeholder="この行動のまずかった点1"></textarea><br>
+    <textarea id="badPoint2" name="badPoint" placeholder="この行動のまずかった点2"></textarea><br><br>
+    行動の改善案（1つだけでもOK）<br>
+    <textarea id="improvementPlan1"  name="improvementPlan" placeholder="行動の改善案1"></textarea><br>
+    <textarea id="improvementPlan2"  name="improvementPlan" placeholder="行動の改善案2"></textarea><br><br>
+
+    </div>
+    補足事項<br>
+    <textarea id="appendix" placeholder="補足事項"></textarea><br>
+    <button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button>
+
+    
+
+    <!-- bodyタグ内の下部に以下を入力する -->
+    <script>
+        function gatherAllText() {
+            var who = document.getElementById("who").value;
+            var when = document.getElementById("when").value;
+            var where = document.getElementById("where").value;
+            var why = document.getElementById("why").value;
+            var whathow = document.getElementById("whathow").value;
+            var result = document.getElementById("result").value;
+            // var important_point = document.getElementById("important_point").value;
+            // var important_point = document.getElementById("important_point");
+
+        
+            radio = document.getElementsByName('maker');
+            if(radio[0].checked) {
+                var pointTitle = "この行動の良かった点";
+                var points = Array.prototype.slice.call(document.getElementsByName("goodPoint"));
+                points = filterEmptyText(points);
+                // var others = document.getElementById("anotherStory").value;
+                var othersTitle = "この行動をやっていなかった世界線";
+                var others = Array.prototype.slice.call(document.getElementsByName("anotherStory"));
+                others = filterEmptyText(others);
+            }else if(radio[1].checked) {
+                var pointTitle = "この行動のまずかった点";
+                var points = Array.prototype.slice.call(document.getElementsByName("badPoint"));
+                points = filterEmptyText(points);
+            
+                var othersTitle = "行動の改善案";
+                var others = Array.prototype.slice.call(document.getElementsByName("improvementPlan"));
+                others = filterEmptyText(others);
+            }
+            const l_circumstance = "\* 行動の背景説明";
+            const l_who = `|誰が|${who}|`;
+            const l_when = `|いつ|${when}|`;
+            const l_where = `|どこで|${where}|`;
+            const l_why = `|なぜ|${why}|`;
+            const l_whathow = `|何をどうした|${whathow}|`;
+            const l_result = `|結果どうなった|${result}|`;
+
+            const l_pointTitle = `\* ${pointTitle}`;
+            const l_points = gatherItems(points);
+
+            const l_othersTitle = `\* ${othersTitle}`;
+            // const l_others = `${others}`;
+            const l_others = gatherItems(others);
+
+            const l_appendixTitle = `\* ${document.getElementById("appendix").placeholder}`;
+            const l_appendix = "";
+
+
+            var res = [l_circumstance, l_who, l_when, l_where, l_why, l_whathow, l_result, l_pointTitle, l_points, l_othersTitle, l_others, l_appendixTitle, l_appendix].join("\n");
+            
+            
+            return res;
+        }
+        function gatherItems(items) {
+            var tmp = "";
+            items.forEach( function( item ) {
+                tmp = `${tmp}-${item.value}\n`;
+            });
+            return tmp;
+        }
+        function copy2Clipboard() {
+            var copyTarget = gatherAllText();
+            navigator.clipboard.writeText(copyTarget).then(success,faild);
+    
+            function success(){
+                alert("コピーできました");
+            }
+            function faild(){
+                alert("コピー失敗しました。ブラウザを変えてみたらうまくいくかも");
+            }
+            
+        }
+
+        function filterEmptyText(items){
+            var res = items.filter(word => word.value.length > 0);
+            return res;
+        }
+
+        function formSwitch(){
+            radio = document.getElementsByName('maker');
+            if(radio[0].checked) {
+                document.getElementById('goodchoice').style.display = "";
+                document.getElementById('badchoice').style.display = "none";
+            }else if(radio[1].checked) {
+                document.getElementById('goodchoice').style.display = "none";
+                document.getElementById('badchoice').style.display = "";
+            }
+        }
+
+        window.onload = formSwitch();
+    </script>
+</body>
+</html>
