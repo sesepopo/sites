@@ -5,6 +5,20 @@ body {
   background-color: rgba(47,136,177,0.4);
   }
 
+.button {
+  display: block;
+  width: 160px;
+  height: 36px;
+  text-align: center;
+  color: #666;
+  line-height: 36px;
+  text-decoration: none;
+  background-color: #efefef;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 
 textarea.fixed-vertical {
@@ -28,8 +42,9 @@ textarea.large {
 }
 
 input[type="radio"]{
-  -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  margin-left: 1em;
   margin-right: 0.5em;
 }
 
