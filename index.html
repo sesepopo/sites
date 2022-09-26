@@ -8,46 +8,70 @@
 </head>
 <body>
     <h1>行動の背景説明</h1>
+    <p>区分<br>
     <input type="radio" name="maker" value="good" onclick="formSwitch()" checked><label for="good">良かった行動</label>
-    <input type="radio" name="maker" value="bad" onclick="formSwitch()"><label for="bad">まずかった行動</label><br><br>
-    誰が<br>
-    <textarea class='small' id="who" type="text" value="" placeholder="誰が"></textarea><br><br>
-    いつ<br>
-    <textarea class='small' id="when" placeholder="いつ"></textarea><br><br>
-    どこで<br>
-    <textarea class='small' id="where" placeholder="どこで"></textarea><br><br>
-    なぜ<br>
-    <textarea class='normal' id="why" placeholder="なぜ"></textarea><br><br>
-    何をどうした<br>
-    <textarea class='normal' id="whathow" placeholder="何をどうした"></textarea><br><br>
-    結果どうなった<br>
-    <textarea class='normal' id="result" placeholder="結果どうなった"></textarea><br><br>
+    <input type="radio" name="maker" value="bad" onclick="formSwitch()"><label for="bad">まずかった行動</label></p>
+    <p>誰が<br>
+    <textarea class='small' id="who" type="text" value="" placeholder="誰が"></textarea></p>
+    <p>いつ<br>
+    <textarea class='small' id="when" placeholder="いつ"></textarea></p>
+    <p>どこで<br>
+    <textarea class='small' id="where" placeholder="どこで"></textarea></p>
+    <p>なぜ<br>
+    <textarea class='normal' id="why" placeholder="なぜ"></textarea></p>
+    <p>何をどうした<br>
+    <textarea class='normal' id="whathow" placeholder="何をどうした"></textarea></p>
+    <p>結果どうなった<br>
+    <textarea class='normal' id="result" placeholder="結果どうなった"></textarea></p>
+
     <h1>行動を振り返って</h1>
+
     <div id="goodchoice">
+    <p>
+    <div id="form_area_1">
     この行動の良かった点（1つだけでもOK）<br>
     <textarea class='large' id="goodPoint1" name="goodPoint" placeholder="この行動の良かった点1"></textarea><br>
-    <textarea class='large' id="goodPoint2" name="goodPoint" placeholder="この行動の良かった点2"></textarea><br><br>
+    <textarea class='large' id="goodPoint2" name="goodPoint" placeholder="この行動の良かった点2"></textarea><br>
+    </div>
+    <input type="button" value="フォーム追加" onclick="addForm('goodPoint', 1)"></p>
+
+    <p>
+    <div id="form_area_2">
     この行動をやっていなかった世界線（1つだけでもOK）<br>
     <textarea class='large' id="anotherStory1"  name="anotherStory" placeholder="この行動をやっていなかった世界線1"></textarea><br>
-    <textarea class='large' id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br><br>
+    <textarea class='large' id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br>
     </div>
+    <input type="button" value="フォーム追加" onclick="addForm('anotherStory', 2)"></p>
+    </div>
+
+
     <div id="badchoice">
+    <p>
+    <div id="form_area_3">
     この行動のまずかった点（1つだけでもOK）<br>
     <textarea class='large' id="badPoint1" name="badPoint" placeholder="この行動のまずかった点1"></textarea><br>
-    <textarea class='large' id="badPoint2" name="badPoint" placeholder="この行動のまずかった点2"></textarea><br><br>
+    <textarea class='large' id="badPoint2" name="badPoint" placeholder="この行動のまずかった点2"></textarea><br>
+    </div>
+    <input type="button" value="フォーム追加" onclick="addForm('badPoint', 3)"></p>
+
+    <p>
+    <div id="form_area_4">
     行動の改善案（1つだけでもOK）<br>
     <textarea class='large' id="improvementPlan1"  name="improvementPlan" placeholder="行動の改善案1"></textarea><br>
-    <textarea class='large' id="improvementPlan2"  name="improvementPlan" placeholder="行動の改善案2"></textarea><br><br>
-
+    <textarea class='large' id="improvementPlan2"  name="improvementPlan" placeholder="行動の改善案2"></textarea><br>
     </div>
-    補足事項<br>
-    <textarea class='large' id="appendix" placeholder="補足事項"></textarea><br>
-    <button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button><br><br>
-    <a href="https://wikiwiki.jp/healthyemu/?cmd=newpage&refer=FrontPage" target="_blank" rel=“noopener”>Wikiで新規ページを作成</a>
+    <input type="button" value="フォーム追加" onclick="addForm('improvementPlan', 4)"></p>
+    </div>
 
-    <!-- <footer>
-        <p>任意のサイトへの利用可・コード再利用可</p>
-    </footer> -->
+    <p>
+    <div id="form_area_5">
+    補足事項<br>
+    <textarea class='large' id="appendix1" name="appendix" placeholder="補足事項"></textarea><br>
+    </div>
+    <input type="button" value="フォーム追加" onclick="addForm('appendix', 5)"></p>
+
+    <p><button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button></p>
+    <p><a href="https://wikiwiki.jp/healthyemu/?cmd=newpage&refer=FrontPage" target="_blank" rel=“noopener”>Wikiで新規ページを作成</a></p>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
