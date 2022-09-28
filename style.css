@@ -1,30 +1,20 @@
 body {
   /* font-size: 4.266vw !important; */
   font-size: 16px;
-  background-color:#2F88B1;
-  background-color: rgba(47,136,177,0.4);
-  }
-
-.button {
-  display: block;
-  width: 160px;
-  height: 36px;
-  text-align: center;
-  color: #666;
-  line-height: 36px;
-  text-decoration: none;
-  background-color: #efefef;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
+  /* background-color:#2F88B1; */
+  background-color: rgba(102, 159, 186, 0.4);
+  /* text-align: center; */
+  width: 97%;
+  margin: 10px auto;
+  /* padding: 10px 2%; */
 }
 
 
-
-textarea.fixed-vertical {
-    resize: vertical;
-    width: 50em;
-  }
+.padding_10em {
+  padding: 11em 0;
+  /* margin-left: calc(((100vw - 100%) / 2) * -1);
+  margin-right: calc(((100vw - 100%) / 2) * -1); */
+}
 
 textarea.small {
   width: 50em;
@@ -66,6 +56,7 @@ ul.footer-menu li {
   }
 
 input{ font-size:16px; }
+
 textarea{
   font-size:16px;
   padding:5px 5px 5px 5px;
@@ -75,17 +66,17 @@ textarea{
 @media screen and (max-width:480px) {
   
   textarea.small {
-    width: 100%;
+    width: 97%;
     height: 2em;
   }
 
   textarea.normal {
-    width: 100%;
+    width: 97%;
     height: 3em;
   }
 
   textarea.large {
-    width: 100%;
+    width: 97%;
     height: 5em;
   }
   
