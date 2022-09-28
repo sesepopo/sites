@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>投稿用フォーム</title>
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vaporwave.css">
 </head>
 <body>
     <h1>行動の背景説明</h1>
@@ -24,6 +25,7 @@
     <p>結果どうなった<br>
     <textarea class='normal' id="result" placeholder="結果どうなった"></textarea></p>
 
+
     <h1>行動を振り返って</h1>
 
     <div id="goodchoice">
@@ -35,6 +37,8 @@
     </div>
     <input type="button" value="フォーム追加" onclick="addForm('goodPoint', 1)"></p>
 
+    </div>
+
     <p>
     <div id="form_area_2">
     この行動をやっていなかった世界線（1つだけでもOK）<br>
@@ -42,7 +46,7 @@
     <textarea class='large' id="anotherStory2"  name="anotherStory" placeholder="この行動をやっていなかった世界線2"></textarea><br>
     </div>
     <input type="button" value="フォーム追加" onclick="addForm('anotherStory', 2)"></p>
-    </div>
+  
 
 
     <div id="badchoice">
@@ -72,6 +76,15 @@
 
     <p><button onclick="copy2Clipboard()">Wiki書式に変換してクリップボードにコピー</button></p>
     <p><a href="https://wikiwiki.jp/healthyemu/?cmd=newpage&refer=FrontPage" target="_blank" rel=“noopener”>Wikiで新規ページを作成</a></p>
+    
+
+    <div class='example water statues'>
+      <p class="padding_10em"></p>
+    </div>
+
+    <div class='white-marble columns'>
+      <p class="padding_10em"></p>
+    </div>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
